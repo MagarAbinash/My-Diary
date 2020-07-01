@@ -11,21 +11,33 @@
 
 .nav ul{
     display: grid;
-    grid-template-columns: repeat(4, 100px);
+    grid-template-columns: repeat(3, 100px);
     justify-content: flex-end;
+    padding: 0;
+    margin: 0;
+    height: 100%;
 }
 
 .nav li{
+    height: 100%;
     list-style: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
 .nav a{
     text-decoration: none;
+    color: black;
+}
+
+.nav a:hover{
+    background: black;
+    color: white;
 }
 
 .body{
     display: grid;
-    grid-template-columns: 2fr 1fr;
     grid-template-areas:
         'body-editor body-dates'
         'body-footer body-footer';
@@ -33,7 +45,6 @@
 
 .body-footer{
     grid-column: 1/3;
-    background: cyan;
 }
 
 button{
@@ -61,15 +72,18 @@ button:hover{
 
 
 
-@media(max-width: 1000px){
+@media(max-width: 500px){
     .nav ul{
         grid-template-columns: 1fr;
         justify-content: center;
     }
+    
     .body{
-        grid-template-areas:
-        'body-editor'
-        'body-dates'
-        'body-footer';
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .display-diary{
+        grid-template-columns: 1fr 1fr;
     }
 }
